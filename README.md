@@ -2,7 +2,7 @@
 
 Você que é Desenvolvedor PL/SQL, então esse meu código pode te ajudar muito.
 
-Essa package permite controlar o tempo para execução de processos, principal uso dentro de Loops.
+Essa package permite controlar o tempo para execução de processos, principal uso dentro de Loop.
 
 Com certeza você já teve aquele processo demorado de Carga ETL que fica executando por vários minutos ou talvez horas onde a carga está dentro de um Loop ou Cursor.
 
