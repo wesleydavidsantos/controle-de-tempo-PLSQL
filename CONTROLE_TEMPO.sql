@@ -1,17 +1,3 @@
--------------------------------------------------------------------------------------------------
-------------------------------------- INTRODUÇÃO ------------------------------------------------
--------------------------------------------------------------------------------------------------
---
--- O funcionamento desta package é parecido com um cronômetro.
--- Essa package permite controlar o tempo para execução de processos, principal uso dentro de Loops.
--- O cronômetro é reiniciado de forma automática após passar o tempo definido
---
---
-
-
-
---
--- Responsável por permitir realizar ações em intervalos de tempo definidos em segundos, o seu uso é indicado dentro de LOOP
 CREATE OR REPLACE PACKAGE CONTROLE_TEMPO IS
 --
 -- Responsável por permitir realizar ações em intervalos de tempo definidos em segundos, o seu uso é indicado dentro de LOOP
