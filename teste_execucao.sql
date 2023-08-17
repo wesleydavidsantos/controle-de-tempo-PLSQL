@@ -1,0 +1,56 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+-- Teste Package CONTROLE_TEMPO
+-- Autor: Wesley David Santos
+-- Skype: wesleydavidsantos		
+-- https://www.linkedin.com/in/wesleydavidsantos
+--
+
+	v_ID_CRONOMETRO_01 VARCHAR2(100);
+	v_ID_CRONOMETRO_02 VARCHAR2(100);
+	
+	v_CONTADOR_LOOP_01 NUMBER DEFAULT 0;
+	v_CONTADOR_LOOP_02 NUMBER DEFAULT 0;
+	
+BEGIN
+
+	v_ID_CRONOMETRO_01 := CONTROLE_TEMPO.SET_TEMPO_LIMITE(10);
+	
+	v_ID_CRONOMETRO_02 := CONTROLE_TEMPO.SET_TEMPO_LIMITE(5);
+	
+	LOOP
+		
+		IF CONTROLE_TEMPO.VERIFICAR_TEMPO( v_ID_CRONOMETRO_01 ) THEN
+			
+			DBMS_OUTPUT.PUT_LINE( 'Loop 01 - Execuções: ' || v_CONTADOR_LOOP_01 || ' / Horário: ' || SYSDATE  );
+			DBMS_OUTPUT.PUT_LINE( '' );
+			
+			EXIT;
+		
+		END IF;
+		
+		
+		v_CONTADOR_LOOP_01 := v_CONTADOR_LOOP_01 + 1;
+		
+		
+		LOOP
+			
+			IF CONTROLE_TEMPO.VERIFICAR_TEMPO( v_ID_CRONOMETRO_02 ) THEN
+			
+				DBMS_OUTPUT.PUT_LINE( 'Loop 02 - Execuções: ' || v_CONTADOR_LOOP_02 || ' / Horário: ' || SYSDATE );
+				DBMS_OUTPUT.PUT_LINE( '' );
+				
+				EXIT;
+				
+			END IF;
+			
+			v_CONTADOR_LOOP_02 := v_CONTADOR_LOOP_02 + 1;
+								
+		END LOOP;
+		
+		
+	END LOOP;
+	
+END;
+/
